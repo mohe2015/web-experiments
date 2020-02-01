@@ -1,5 +1,5 @@
-const http = require('http');
-const WebSocket = require('ws');
+import http from 'http'
+import WebSocket from 'ws'
  
 const server = http.createServer();
 const wss = new WebSocket.Server({ noServer: true });
@@ -32,3 +32,4 @@ server.on('upgrade', function upgrade(request, socket, head) {
 });
  
 server.listen(8080);
+console.log('listening on ws://localhost:8080')
