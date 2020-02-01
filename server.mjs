@@ -6,18 +6,24 @@ const wss = new WebSocket.Server({ noServer: true });
  
 wss.on('connection', function connection(ws, request, client) {
     const ip = request.connection.remoteAddress;
-    ws.on('message', function message(msg) {
-    console.log(`Received message ${msg} from user ${client}`);
-  
-    wss.clients.forEach(function each(client) {
-        if (client !== ws && client.readyState === WebSocket.OPEN) {
-          client.send(data);
-        }
-      });
+    console.log('request from ' + ip)
+    ws.on('message', function message(data) {
+      console.log(`Received message ${data} from user ${client}`);
+    
+      wss.clients.forEach(function each(client) {
+          if (client !== ws && client.readyState === WebSocket.OPEN) {
+            client.send(data);
+          }
+        });
 
     });
 });
- 
+
+function authenticate(request, callback) {
+  request.userId = 'test';
+  callback(null, request)
+}
+
 server.on('upgrade', function upgrade(request, socket, head) {
   authenticate(request, (err, client) => {
     if (err || !client) {
@@ -26,7 +32,7 @@ server.on('upgrade', function upgrade(request, socket, head) {
     }
  
     wss.handleUpgrade(request, socket, head, function done(ws) {
-      wss.emit('connection', ws, request, client);
+      wss.emit('connection', ws, request/*, client*/);
     });
   });
 });
