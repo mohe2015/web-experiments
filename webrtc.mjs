@@ -10,7 +10,7 @@
 
 // The bootstrapNodes listen on websocket protocol and are only needed to connect.
 
-const bootstrapNodes = ['ws://localhost:8080'];
+const bootstrapNodes = ['ws://localhost:1337'];
 const configuration = {'iceServers': [{'urls': 'stun:stun.l.google.com:19302'}]}
 
 function bufferToHex (buffer) {
@@ -48,12 +48,12 @@ export async function makeCall() {
     console.log(cert);
 
     const peerConnection = new RTCPeerConnection({certificates: [cert]})
-    
+
     peerConnection.addEventListener('negotiationneeded', async event => {
         const offer = await peerConnection.createOffer()
         await peerConnection.setLocalDescription(offer)
         prompt('copy', JSON.stringify(offer))
-    
+
         let remoteDescription = new RTCSessionDescription(JSON.parse(window.prompt("Remote description: ")))
         await peerConnection.setRemoteDescription(remoteDescription);
     })
@@ -91,7 +91,7 @@ export async function receiveCall() {
     console.log(cert); // basically your peer identifier
 
     const peerConnection = new RTCPeerConnection({certificates: [cert]})
-    
+
     let remoteDescription = new RTCSessionDescription(JSON.parse(window.prompt("Remote description: ")))
     peerConnection.setRemoteDescription(new RTCSessionDescription(remoteDescription))
     const answer = await peerConnection.createAnswer()
@@ -111,7 +111,7 @@ export async function receiveCall() {
 
     peerConnection.addEventListener('datachannel', event => {
         event.channel.onopen = function(event) {
-            
+
             event.channel.send('2')
         }
         event.channel.onclose = function(event) {
@@ -124,5 +124,5 @@ export async function receiveCall() {
             console.log(event.data)
         }
     })
-    
+
 }
