@@ -20,6 +20,7 @@ function bufferToHex (buffer) {
         .join ("");
 }
 
+// TODO persistent storage and quota estimation
 function uniqueIdentifier() {
     return bufferToHex(crypto.getRandomValues(new Uint8Array(16)))
 }

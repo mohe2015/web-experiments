@@ -3,6 +3,7 @@
     "watch": "yarn nodemon ./server.mjs"
   },
   "dependencies": {
+    "idb": "^5.0.2",
     "ws": "^7.2.1"
   },
   "devDependencies": {
