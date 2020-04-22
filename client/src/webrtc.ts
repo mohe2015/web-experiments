@@ -112,7 +112,6 @@ export async function receiveCall() {
 
     peerConnection.addEventListener('datachannel', event => {
         event.channel.onopen = function(event) {
-
             event.channel.send('2')
         }
         event.channel.onclose = function(event) {
