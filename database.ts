@@ -4,6 +4,7 @@ import { IDBPDatabase } from 'idb';
 
 async function test() {
   let db: IDBPDatabase = await idb.openDB('settings', 1)
+  db.close()
 }
 
 test()

@@ -1,10 +1,14 @@
 {
     "compilerOptions": {
-        "target": "ESNext",
-        "lib": [
-            "ES2018",
-            "ES2018.AsyncIterable",
-            "DOM"
-        ],
+      "strict": true,
+      "target": "esnext",
+      "module": "esnext",
+      "moduleResolution": "node",
+      "noUnusedLocals": true,
+      "sourceMap": true,
+      "declaration": true,
+      "declarationDir": "./build/",
+      "outDir": "./build/"
     },
-}
+    "files": ["database.ts"]
+  }
