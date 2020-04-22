@@ -1,9 +1,10 @@
 {
     "compilerOptions": {
+        "target": "ESNext",
         "lib": [
-            "esnext.asynciterable",
-            "esnext",
-            "dom"
+            "ES2018",
+            "ES2018.AsyncIterable",
+            "DOM"
         ],
     },
 }
