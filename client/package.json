@@ -4,7 +4,9 @@
     "build": "tsc"
   },
   "dependencies": {
-    "idb": "^5.0.2"
+    "bootstrap": "https://github.com/twbs/bootstrap.git",
+    "idb": "^5.0.2",
+    "popper.js": "^1.16.0"
   },
   "devDependencies": {
     "nodemon": "^2.0.3",
