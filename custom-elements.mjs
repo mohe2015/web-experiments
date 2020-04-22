@@ -1,8 +1,9 @@
 // https://developer.mozilla.org/en-US/docs/Web/Web_Components/Using_custom_elements
 
-//  extends HTMLElement
-export function Button() {
-    super()
+ export class Button extends HTMLElement {
+
+   constructor() {
+     super()
 
     var shadow = this.attachShadow({mode: 'open'})
 
@@ -29,6 +30,7 @@ export function Button() {
 
     shadow.appendChild(button);
     shadow.appendChild(linkElem);
+  }
 }
 
 customElements.define('my-button', Button)
