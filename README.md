@@ -1,6 +1,7 @@
 # web-experiments
 
-TODO typescript
+yarn tsc --lib ES2015 database.ts
+
 
 ```bash
 yarn install
