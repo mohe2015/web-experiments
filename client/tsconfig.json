@@ -10,5 +10,5 @@
     "declarationDir": "./build/",
     "outDir": "./build/"
   },
-  "files": ["src/database.ts"]
+  "files": ["src/database.ts", "src/custom-elements.ts"]
 }

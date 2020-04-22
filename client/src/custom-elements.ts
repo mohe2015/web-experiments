@@ -27,7 +27,7 @@
 
     const linkElem = document.createElement('link');
     linkElem.setAttribute('rel', 'stylesheet');
-    linkElem.setAttribute('href', '/bootstrap.css');
+    linkElem.setAttribute('href', '/node_modules/bootstrap/dist/css/bootstrap.css');
 
     shadow.appendChild(button);
     shadow.appendChild(linkElem);
