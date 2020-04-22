@@ -1,8 +1,11 @@
 {
   "scripts": {
-    "server": "node server.mjs"
+    "watch": "yarn nodemon ./server.mjs"
   },
   "dependencies": {
     "ws": "^7.2.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.3"
   }
 }
