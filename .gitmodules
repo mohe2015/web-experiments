@@ -1,3 +1,0 @@
-[submodule "ipfs-test/js-ipfs"]
-	path = ipfs-test/js-ipfs
-	url = https://github.com/ipfs/js-ipfs
