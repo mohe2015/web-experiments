@@ -1,6 +1,7 @@
 {
   "scripts": {
-    "watch": "yarn nodemon ./server.mjs"
+    "watch": "yarn nodemon ./server.mjs",
+    "test": "tsc --lib ES2015 database.ts"
   },
   "dependencies": {
     "idb": "^5.0.2",
