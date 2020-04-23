@@ -1,7 +1,7 @@
 import http from 'http'
 import WebSocket from 'ws'
 
-const server = http.createServer();
+const server: http.Server = http.createServer();
 const wss = new WebSocket.Server({ noServer: true });
 
 wss.on('connection', function connection(ws, request, client) {

@@ -3,12 +3,12 @@
     "strict": true,
     "target": "esnext",
     "module": "esnext",
-    "moduleResolution": "node",
+    "moduleResolution": "Node",
     "noUnusedLocals": true,
     "sourceMap": true,
     "declaration": true,
     "declarationDir": "./build/",
     "outDir": "./build/"
   },
-  "files": ["src/database.ts"]
+  "files": ["src/server.MJS"]
 }
