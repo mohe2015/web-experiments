@@ -10,7 +10,7 @@ export default {
     sourcemap: true
   },
   plugins: [
-    resolve({ jsnext: true, extensions: [".ts"] }),
+    resolve({ browser: true, jsnext: true, extensions: [".ts"] }),
     typescript({
     }),
   ]

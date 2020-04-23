@@ -5,9 +5,7 @@
     "module": "esnext",
     "moduleResolution": "node",
     "noUnusedLocals": true,
-    "sourceMap": true,
-    "declaration": true,
-    "declarationDir": "./output"
+    "sourceMap": true
   },
   "include": ["src"],
 }
