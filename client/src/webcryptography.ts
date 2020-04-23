@@ -41,7 +41,7 @@ function getKey(keyMaterial: CryptoKey, salt: Uint8Array) {
     {
       "name": "PBKDF2",
       salt: salt, 
-      "iterations": 100000,
+      "iterations": 1000000,
       "hash": "SHA-256"
     },
     keyMaterial,
@@ -129,3 +129,23 @@ encryptButton.addEventListener("click", encrypt);
 
 const decryptButton = document.querySelector(".pbkdf2 .decrypt-button") as HTMLElement;
 decryptButton.addEventListener("click", decrypt);
+
+
+
+
+async function test() {
+  let key = await window.crypto.subtle.generateKey(
+    {
+      name: "AES-GCM",
+      length: 256
+    },
+    true,
+    ["encrypt", "decrypt"]
+  )
+
+  let jwt = await window.crypto.subtle.exportKey('jwk', key)
+  console.log(jwt)
+}
+
+
+test()
