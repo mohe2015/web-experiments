@@ -7,7 +7,8 @@ export default {
     './src/custom-elements.ts',
     './src/webrtc.ts',
     './src/index.ts',
-    './src/webcryptography.ts'
+    './src/webcryptography.ts',
+    './src/qrcode-generator.ts'
   ],
   output: {
     dir: 'build',
