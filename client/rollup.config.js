@@ -1,5 +1,6 @@
 import typescript from '@rollup/plugin-typescript';
 import resolve from "@rollup/plugin-node-resolve";
+import commonjs from '@rollup/plugin-commonjs';
 
 export default {
   input: [
@@ -16,7 +17,13 @@ export default {
     sourcemap: true
   },
   plugins: [
-    resolve({ browser: true, jsnext: true, extensions: [".ts"] }),
+    commonjs(),
+    resolve({
+      preferBuiltins: false,
+      browser: true, 
+      jsnext: true, 
+      extensions: [".ts"]
+    }),
     typescript({
     }),
   ]
