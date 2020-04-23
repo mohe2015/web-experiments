@@ -1,13 +1,16 @@
 # web-experiments
 
-cd node_modules/ts-node
-yarn
-cd ../..
+TODO
+discovery: bootstrap nodes, mdns, random walk on DHT
 
-node --loader ts-node/esm src/index.js
+webrtc: central signaling server / find peer using dht, peer which replied to query should be introducer
 
-
-
+https://github.com/libp2p/specs
+https://github.com/libp2p/specs/blob/master/rendezvous/README.md
+https://github.com/libp2p/specs/blob/master/pubsub/gossipsub/episub.md
+https://github.com/libp2p/specs/blob/master/pubsub/gossipsub/README.md
+https://github.com/libp2p/specs/blob/master/pubsub/gossipsub/gossipsub-v1.1.md
+https://github.com/libp2p/specs/blob/master/relay/README.md
 
 credential-management-api
 // https://caniuse.com/#feat=credential-management

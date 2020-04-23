@@ -13,12 +13,21 @@
   <body>
     <h1>Hello, world!</h1>
 
+    <div class="pbkdf2">
+      <input class="form-control" type="text" id="pbkdf2-message" />
+      <div class="ciphertext-value"></div>
+      <div class="decrypted-value"></div>
+      <button class="btn btn-primary encrypt-button">Encrypt</button>
+      <button class="btn btn-primary decrypt-button">Decrypt</button>
+    </div>
+
     <my-button id="offer" secondary>Offer</my-button>
     <my-button id="answer" secondary>Answer</my-button>
 
     <script type="module" src="/build/custom-elements.js"></script>
     <script type="module" src="/build/database.js"></script>
     <script type="module" src="/build/index.js"></script>
+    <script type="module" src="/build/webcryptography.js"></script>
     <script src="/node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
     <script>
       document.write('<script src="http://' + (location.host || 'localhost').split(':')[0] +

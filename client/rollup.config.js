@@ -6,7 +6,8 @@ export default {
     './src/database.ts',
     './src/custom-elements.ts',
     './src/webrtc.ts',
-    './src/index.ts'
+    './src/index.ts',
+    './src/webcryptography.ts'
   ],
   output: {
     dir: 'build',
