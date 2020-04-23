@@ -6,6 +6,8 @@
     "moduleResolution": "Node",
     "noUnusedLocals": true,
     "sourceMap": true,
-    "allowSyntheticDefaultImports": true
+    "allowSyntheticDefaultImports": true,
+    "esModuleInterop": true,
+    "outDir": "./build"
   },
 }

@@ -20,6 +20,6 @@ wss.on('connection', function (socket: WebSocket, request: IncomingMessage) {
   });
 });
 
-console.log("jo")
+console.log("joa")
 
 server.listen(1337)
