@@ -1,13 +1,10 @@
 {
   "compilerOptions": {
     "strict": true,
-    "target": "es2015",
-    "module": "es2015",
+    "target": "ESNext",
+    "module": "ESNext",
     "moduleResolution": "Node",
     "noUnusedLocals": true,
     "sourceMap": true,
-    "declaration": true,
-    "declarationDir": "./build/",
-    "outDir": "./build/"
   },
 }
