@@ -1,5 +1,5 @@
 import { createServer } from 'http';
-import * as WebSocket from 'ws';
+import WebSocket from 'ws';
 const server = createServer();
 const wss = new WebSocket.Server({ server: server });
 wss.on('connection', function (socket, request) {
@@ -16,4 +16,6 @@ wss.on('connection', function (socket, request) {
         });
     });
 });
+console.log("jo");
+server.listen(1337);
 //# sourceMappingURL=server.js.map

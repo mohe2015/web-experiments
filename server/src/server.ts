@@ -1,5 +1,5 @@
 import { createServer, Server, IncomingMessage } from 'http'
-import * as WebSocket from 'ws'
+import WebSocket from 'ws'
 
 const server: Server = createServer();
 const wss: WebSocket.Server = new WebSocket.Server({ server: server });
@@ -19,3 +19,7 @@ wss.on('connection', function (socket: WebSocket, request: IncomingMessage) {
     });
   });
 });
+
+console.log("jo")
+
+server.listen(1337)
