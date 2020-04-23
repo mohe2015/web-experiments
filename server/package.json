@@ -4,8 +4,7 @@
   "scripts": {
     "watch:transpile": "tsc --watch",
     "watch:run": "nodemon build/server.js",
-    "watch": "npm-run-all --parallel watch:transpile watch:run",
-    "run": "tsc && node src/server.js"
+    "watch": "npm-run-all --parallel watch:transpile watch:run"
   },
   "dependencies": {
     "ws": "^7.2.3"
