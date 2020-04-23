@@ -11,18 +11,11 @@
 //const configuration = {'iceServers': [{'urls': 'stun:stun.l.google.com:19302'}]}
 
 export async function makeCall() {
-    const cert = await RTCPeerConnection.generateCertificate({
-        name: 'RSASSA-PKCS1-v1_5',
-        // @ts-ignore
-        hash: 'SHA-256',
-        modulusLength: 2048,
-        publicExponent: new Uint8Array([1, 0, 1])
-    })
-    console.log(cert);
-
-    const peerConnection = new RTCPeerConnection({certificates: [cert]})
+    console.log('new RTCPeerConnection()')
+    const peerConnection: RTCPeerConnection = new RTCPeerConnection()
 
     peerConnection.addEventListener('negotiationneeded', async event => {
+        console.log('peerConnection.addEventListener(\'negotiationneeded\'')
         const offer = await peerConnection.createOffer()
         await peerConnection.setLocalDescription(offer)
         prompt('copy', JSON.stringify(offer))
@@ -32,39 +25,33 @@ export async function makeCall() {
     })
 
     peerConnection.addEventListener('connectionstatechange', event => {
-        alert(peerConnection.connectionState)
+        console.log('peerConnection.addEventListener(\'connectionstatechange\'' + peerConnection.connectionState)
     })
 
     peerConnection.addEventListener('icecandidate', event => {
-        console.log(event)
+        console.log('peerConnection.addEventListener(\'icecandidate\'' + event)
     })
 
-    var channel = peerConnection.createDataChannel("main")
+    var channel: RTCDataChannel = peerConnection.createDataChannel("main")
+    console.log('peerConnection.createDataChannel("main")')
     channel.onopen = function(event) {
+        console.log('channel.onopen')
         channel.send('1')
     }
     channel.onclose = function(event) {
-        console.log(event)
+        console.log('channel.onclose' + event)
     }
     channel.onerror = function(event) {
-        console.log(event)
+        console.log('channel.onerror' + event)
     }
     channel.onmessage = function(event) {
-        console.log(event.data)
+        console.log('channel.onmessage' + event.data)
     }
 }
 
 export async function receiveCall() {
-    const cert = await RTCPeerConnection.generateCertificate({
-        name: 'RSASSA-PKCS1-v1_5',
-        // @ts-ignore
-        hash: 'SHA-256',
-        modulusLength: 2048,
-        publicExponent: new Uint8Array([1, 0, 1])
-    })
-    console.log(cert); // basically your peer identifier
-
-    const peerConnection = new RTCPeerConnection({certificates: [cert]})
+    const peerConnection = new RTCPeerConnection()
+    console.log('new RTCPeerConnection()')
 
     let remoteDescription = new RTCSessionDescription(JSON.parse(window.prompt("Remote description: ") as string))
     peerConnection.setRemoteDescription(new RTCSessionDescription(remoteDescription))
@@ -73,28 +60,31 @@ export async function receiveCall() {
     prompt('copy', JSON.stringify(answer))
 
     peerConnection.addEventListener('icecandidate', event => {
-        console.log(event)
+        console.log('peerConnection.addEventListener(\'icecandidate\'' + event)
         if (event.candidate) {
-            // send to remote
+            // TODO send to remote
         }
     })
 
     peerConnection.addEventListener('connectionstatechange', event => {
-        alert(peerConnection.connectionState)
+        console.log('peerConnection.addEventListener(\'connectionstatechange\'' + peerConnection.connectionState)
     })
 
     peerConnection.addEventListener('datachannel', (event: RTCDataChannelEvent) => {
-        event.channel.addEventListener('open', function(e) {
-            event.channel.send('2')
-        })
-        event.channel.onclose = function(event) {
-            console.log(event)
+        console.log('peerConnection.addEventListener(\'datachannel\'')
+        let channel = event.channel
+        channel.onopen = function(event) {
+            console.log('channel.onopen')
+            channel.send('1')
         }
-        event.channel.onerror = function(event) {
-            console.log(event)
+        channel.onclose = function(event) {
+            console.log('channel.onclose' + event)
         }
-        event.channel.onmessage = function(event) {
-            console.log(event.data)
+        channel.onerror = function(event) {
+            console.log('channel.onerror' + event)
+        }
+        channel.onmessage = function(event) {
+            console.log('channel.onmessage' + event.data)
         }
     })
 
