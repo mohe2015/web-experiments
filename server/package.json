@@ -7,8 +7,6 @@
   "devDependencies": {
     "@types/node": "^13.13.2",
     "@types/ws": "^7.2.4",
-    "ts-node": "TypeStrong/ts-node#ab/esm-support",
-    "ts-node-dev": "^1.0.0-pre.44",
     "tsc": "^1.20150623.0",
     "typescript": "^3.8.3"
   }
