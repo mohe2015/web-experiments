@@ -1,5 +1,12 @@
 # web-experiments
 
+cd node_modules/ts-node
+yarn
+cd ../..
+
+node --loader ts-node/esm src/index.js
+
+
 
 
 credential-management-api

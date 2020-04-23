@@ -1,8 +1,8 @@
 {
   "compilerOptions": {
     "strict": true,
-    "target": "esnext",
-    "module": "esnext",
+    "target": "es2015",
+    "module": "es2015",
     "moduleResolution": "Node",
     "noUnusedLocals": true,
     "sourceMap": true,
@@ -10,5 +10,4 @@
     "declarationDir": "./build/",
     "outDir": "./build/"
   },
-  "files": ["src/server.MJS"]
 }
