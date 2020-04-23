@@ -8,7 +8,6 @@
     "sourceMap": true,
     "declaration": true,
     "declarationDir": "./build/",
-    "outDir": "./build/"
-  },
-  "files": ["src/database.ts", "src/custom-elements.ts"]
+    "outDir": "./build/",
+  }
 }

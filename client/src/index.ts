@@ -1,4 +1,4 @@
-import { makeCall, receiveCall } from './webrtc.mjs';
+import { makeCall, receiveCall } from './webrtc';
 
 let offer = document.getElementById('offer')
 offer.addEventListener('click', (event) => {
