@@ -11,9 +11,9 @@
 // The bootstrapNodes listen on websocket protocol and are only needed to connect.
 
 const bootstrapNodes = ['ws://localhost:1337'];
-const configuration = {'iceServers': [{'urls': 'stun:stun.l.google.com:19302'}]}
+//const configuration = {'iceServers': [{'urls': 'stun:stun.l.google.com:19302'}]}
 
-function bufferToHex (buffer) {
+function bufferToHex (buffer: Uint8Array) {
     return Array
         .from (new Uint8Array (buffer))
         .map (b => b.toString (16).padStart (2, "0"))
@@ -42,9 +42,9 @@ webSocket.addEventListener('close', event => {
 export async function makeCall() {
     const cert = await RTCPeerConnection.generateCertificate({
         name: 'RSASSA-PKCS1-v1_5',
-        hash: 'SHA-256',
-        modulusLength: 2048,
-        publicExponent: new Uint8Array([1, 0, 1])
+        //hash: 'SHA-256',
+        //modulusLength: 2048,
+        // publicExponent: new Uint8Array([1, 0, 1])
     })
     console.log(cert);
 
@@ -55,7 +55,7 @@ export async function makeCall() {
         await peerConnection.setLocalDescription(offer)
         prompt('copy', JSON.stringify(offer))
 
-        let remoteDescription = new RTCSessionDescription(JSON.parse(window.prompt("Remote description: ")))
+        let remoteDescription = new RTCSessionDescription(JSON.parse(window.prompt("Remote description: ") as string))
         await peerConnection.setRemoteDescription(remoteDescription);
     })
 
@@ -85,15 +85,15 @@ export async function makeCall() {
 export async function receiveCall() {
     const cert = await RTCPeerConnection.generateCertificate({
         name: 'RSASSA-PKCS1-v1_5',
-        hash: 'SHA-256',
-        modulusLength: 2048,
-        publicExponent: new Uint8Array([1, 0, 1])
+        //hash: 'SHA-256',
+       // modulusLength: 2048,
+        //publicExponent: new Uint8Array([1, 0, 1])
     })
     console.log(cert); // basically your peer identifier
 
     const peerConnection = new RTCPeerConnection({certificates: [cert]})
 
-    let remoteDescription = new RTCSessionDescription(JSON.parse(window.prompt("Remote description: ")))
+    let remoteDescription = new RTCSessionDescription(JSON.parse(window.prompt("Remote description: ") as string))
     peerConnection.setRemoteDescription(new RTCSessionDescription(remoteDescription))
     const answer = await peerConnection.createAnswer()
     await peerConnection.setLocalDescription(answer)
@@ -110,10 +110,10 @@ export async function receiveCall() {
         alert(peerConnection.connectionState)
     })
 
-    peerConnection.addEventListener('datachannel', event => {
-        event.channel.onopen = function(event) {
+    peerConnection.addEventListener('datachannel', (event: RTCDataChannelEvent) => {
+        event.channel.addEventListener('open', function(e) {
             event.channel.send('2')
-        }
+        })
         event.channel.onclose = function(event) {
             console.log(event)
         }

@@ -1,11 +1,11 @@
 import { makeCall, receiveCall } from './webrtc';
 
-let offer = document.getElementById('offer')
+const offer: HTMLElement = document.getElementById('offer') as HTMLElement
 offer.addEventListener('click', (event) => {
     makeCall();
 })
 
-let answer = document.getElementById('answer')
+let answer = document.getElementById('answer') as HTMLElement
 answer.addEventListener('click', (event) => {
     receiveCall();
 })

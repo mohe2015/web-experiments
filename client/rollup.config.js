@@ -10,7 +10,7 @@ export default {
     format: 'es'
   },
   plugins: [
+    resolve({ jsnext: true }),
     typescript(),
-    resolve({ jsnext: true })
   ]
 };

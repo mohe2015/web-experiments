@@ -1,9 +1,11 @@
 {
+  "main": "dist/index.js",
+  "module": "dist/index.es.js",
   "scripts": {
-    "watch": "tsc --watch",
+    "watch": "rollup -c --watch",
     "livereload": "livereload .",
     "serve": "http-server",
-    "build": "tsc"
+    "build": "rollup -c"
   },
   "dependencies": {
     "@rollup/plugin-node-resolve": "^7.1.3",
