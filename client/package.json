@@ -14,7 +14,7 @@
     "http-server": "^0.12.1",
     "idb": "^5.0.2",
     "popper.js": "^1.16.1-lts",
-    "qrcode": "^1.4.4"
+    "qrcode": "https://github.com/LinusU/node-qrcode#uint8array"
   },
   "devDependencies": {
     "@rollup/plugin-commonjs": "^11.1.0",

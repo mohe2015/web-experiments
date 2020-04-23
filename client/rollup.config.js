@@ -17,14 +17,13 @@ export default {
     sourcemap: true
   },
   plugins: [
+    typescript(),
     commonjs(),
     resolve({
       preferBuiltins: false,
       browser: true, 
       jsnext: true, 
-      extensions: [".ts"]
+      extensions: [".ts", ".js"]
     }),
-    typescript({
-    }),
-  ]
+  ],
 };
