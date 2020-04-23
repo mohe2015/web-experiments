@@ -1,4 +1,4 @@
-import { makeCall, receiveCall } from './webrtc';
+import { makeCall, receiveCall } from './webrtc'
 
 const offer: HTMLElement = document.getElementById('offer') as HTMLElement
 offer.addEventListener('click', (event) => {

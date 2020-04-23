@@ -8,43 +8,15 @@
 // https://www.w3.org/TR/WebCryptoAPI/#Crypto-method-getRandomValues
 // https://developer.mozilla.org/en-US/docs/Web/API/Web_Crypto_API
 
-// The bootstrapNodes listen on websocket protocol and are only needed to connect.
-
-const bootstrapNodes = ['ws://localhost:1337'];
 //const configuration = {'iceServers': [{'urls': 'stun:stun.l.google.com:19302'}]}
-
-function bufferToHex (buffer: Uint8Array) {
-    return Array
-        .from (new Uint8Array (buffer))
-        .map (b => b.toString (16).padStart (2, "0"))
-        .join ("");
-}
-
-// TODO persistent storage and quota estimation
-function uniqueIdentifier() {
-    return bufferToHex(crypto.getRandomValues(new Uint8Array(16)))
-}
-
-let webSocket = new WebSocket(bootstrapNodes[0]);
-webSocket.addEventListener('open', event => {
-    webSocket.send(uniqueIdentifier())
-})
-webSocket.addEventListener('error', event => {
-    alert('Connection to bootstrap node failed')
-})
-webSocket.addEventListener('message', event => {
-    console.log(event)
-})
-webSocket.addEventListener('close', event => {
-    console.log('connection closed')
-})
 
 export async function makeCall() {
     const cert = await RTCPeerConnection.generateCertificate({
         name: 'RSASSA-PKCS1-v1_5',
-        //hash: 'SHA-256',
-        //modulusLength: 2048,
-        // publicExponent: new Uint8Array([1, 0, 1])
+        // @ts-ignore
+        hash: 'SHA-256',
+        modulusLength: 2048,
+        publicExponent: new Uint8Array([1, 0, 1])
     })
     console.log(cert);
 
@@ -85,9 +57,10 @@ export async function makeCall() {
 export async function receiveCall() {
     const cert = await RTCPeerConnection.generateCertificate({
         name: 'RSASSA-PKCS1-v1_5',
-        //hash: 'SHA-256',
-       // modulusLength: 2048,
-        //publicExponent: new Uint8Array([1, 0, 1])
+        // @ts-ignore
+        hash: 'SHA-256',
+        modulusLength: 2048,
+        publicExponent: new Uint8Array([1, 0, 1])
     })
     console.log(cert); // basically your peer identifier
 
