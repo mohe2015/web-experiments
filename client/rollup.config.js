@@ -5,7 +5,8 @@ export default {
   input: './src/database.ts',
   output: {
     dir: 'output',
-    format: 'es'
+    format: 'es',
+    sourcemap: true
   },
   plugins: [
     resolve({ jsnext: true, extensions: [".ts"] }),
