@@ -1,11 +1,8 @@
 import * as QRCode from 'qrcode'
 
-const generateQR = async (text: string) => {
-  try {
-    console.log(await QRCode.toDataURL(text))
-  } catch (err) {
-    console.error(err)
-  }
+async function tessst() {
+  let image = document.getElementById('qrcode') as HTMLImageElement
+  image.setAttribute('src', await QRCode.toDataURL('hello'))
 }
 
-console.log(generateQR('hallo'))
+tessst()
