@@ -4,7 +4,7 @@ async function main() {
   let keyPair = await window.crypto.subtle.generateKey(
     {
       name: "ECDSA",
-      namedCurve: "P-384"
+      namedCurve: "P-521"
     },
     true,
     ["sign", "verify"]
@@ -17,7 +17,7 @@ async function main() {
 
   let test1 = btoa(String.fromCharCode(...new Uint8Array(test)))
 
-  setQRCodeData("https://192.168.2.109/#"+test1)
+  setQRCodeData("https://192.168.2.109/#Moritz Hedtke#"+test1)
   
   console.log(test1)
 }

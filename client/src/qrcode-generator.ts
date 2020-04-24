@@ -8,7 +8,8 @@ export async function setQRCodeData(data: string) {
     scale: 8,
     errorCorrectionLevel: "M",
   }
-  
+
+
   image.setAttribute('src', await QRCode.toDataURL(data, options))
 
 }
