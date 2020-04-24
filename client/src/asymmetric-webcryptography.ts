@@ -31,7 +31,8 @@ async function main() {
 
   let exportedPublicKey = await window.crypto.subtle.exportKey('jwk', keyPair.publicKey)
   console.log(exportedPublicKey)
-  setQRCodeData(JSON.stringify(exportedPublicKey))
+  setQRCodeData("https://192.168.2.109/#"+JSON.stringify(exportedPublicKey))
+  //setQRCodeData('HI')
 }
 
 main()

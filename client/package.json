@@ -4,8 +4,7 @@
   "scripts": {
     "watch:ts": "rollup -c --watch",
     "watch:livereload": "livereload .",
-    "watch:serve": "http-server",
-    "watch": "npm-run-all --parallel watch:ts watch:serve watch:livereload",
+    "watch": "npm-run-all --parallel watch:ts watch:livereload",
     "build": "rollup -c"
   },
   "dependencies": {
