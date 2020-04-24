@@ -10,7 +10,9 @@ export default {
     './src/index.ts',
     './src/symmetric-webcryptography.ts',
     './src/asymmetric-webcryptography.ts',
-    './src/qrcode-generator.ts'
+    './src/qrcode-generator.ts',
+    './src/qrcode-scanner.ts',
+    'node_modules/qr-scanner/qr-scanner-worker.min.js'
   ],
   output: {
     dir: 'build',
