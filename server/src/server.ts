@@ -1,5 +1,23 @@
 import { createServer, Server, IncomingMessage } from 'http'
 import WebSocket from 'ws'
+import Crypto from '@peculiar/webcrypto';
+
+const crypto = new Crypto.Crypto();
+
+async function jjjj() {
+  let keyPair = await crypto.subtle.generateKey(
+    {
+      name: "ECDSA",
+      namedCurve: "P-521"
+    },
+    true,
+    ["sign", "verify"]
+  );
+
+  let test = await crypto.subtle.exportKey('raw', keyPair.publicKey)
+  console.log(test)
+}
+jjjj()
 
 const server: Server = createServer();
 const wss: WebSocket.Server = new WebSocket.Server({ server: server });

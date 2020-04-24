@@ -3,13 +3,16 @@
 opening the page creates a link to connect to you
 you also send that info to the bootstrap server
 
-
 if you open that link it asks the bootstrap server
 to connect you to that participant
 
+but then the bootstrap server would need to
+store lots of data - the bootstrap server only stores the persons it trusts
 
+but everybody can ask it for a persons connection
+(they need to trust you first)
 
-
+maybe just use a dht and only trusted peers can add
 
 
 
