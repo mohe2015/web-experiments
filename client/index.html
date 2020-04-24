@@ -21,6 +21,10 @@
       <button class="btn btn-primary decrypt-button">Decrypt</button>
     </div>
 
+    <div class="ecdsa">
+      <input class="form-control" type="text" id="message" />
+    </div>
+
     <img id="qrcode" />
 
     <my-button id="offer" secondary>Offer</my-button>
@@ -29,7 +33,8 @@
     <script type="module" src="/build/custom-elements.js"></script>
     <script type="module" src="/build/database.js"></script>
     <script type="module" src="/build/index.js"></script>
-    <script type="module" src="/build/webcryptography.js"></script>
+    <script type="module" src="/build/symmetric-webcryptography.js"></script>
+    <script type="module" src="/build/asymmetric-webcryptography.js"></script>
     <script type="module" src="/build/qrcode-generator.js"></script>
     <script src="/node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
     <script>

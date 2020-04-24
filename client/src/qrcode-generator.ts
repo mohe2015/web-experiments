@@ -1,11 +1,7 @@
 import * as QRCode from 'qrcode'
-//import encodeUtf8 from 'encode-utf8';
 
-async function tessst() {
+export async function setQRCodeData(data: string) {
   let image = document.getElementById('qrcode') as HTMLImageElement
-  image.setAttribute('src', await QRCode.toDataURL('hello'))
+  image.setAttribute('src', await QRCode.toDataURL(data))
 
-  //encodeUtf8('hi')
 }
-
-tessst()
