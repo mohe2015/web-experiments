@@ -1301,11 +1301,6 @@ pupa@^2.0.1:
   dependencies:
     escape-goat "^2.0.0"
 
-qr-scanner@^1.1.1:
-  version "1.1.1"
-  resolved "https://registry.yarnpkg.com/qr-scanner/-/qr-scanner-1.1.1.tgz#49775d3992733b5198f01a9aa65225962b0cb17d"
-  integrity sha512-vZmtaIpxx4rqnrg4iX62pQJ12bcIpfTEe/hL4Pr5PwQ/fih8W+ErfAZVFnnrdipeDC6L+5BfzMIqs/s6SYi4WA==
-
 "qrcode@https://github.com/LinusU/node-qrcode#uint8array":
   version "1.4.4"
   resolved "https://github.com/LinusU/node-qrcode#df2ba5a2501b7b0626aa4d310c729639ceaf4e1b"

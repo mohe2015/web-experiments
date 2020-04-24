@@ -6,7 +6,7 @@ export async function setQRCodeData(data: string) {
   let options: QRCode.QRCodeToDataURLOptions = {
     rendererOpts: { quality: 1 },
     scale: 8,
-    errorCorrectionLevel: "H"
+    errorCorrectionLevel: "M",
   }
 
   image.setAttribute('src', await QRCode.toDataURL(data, options))

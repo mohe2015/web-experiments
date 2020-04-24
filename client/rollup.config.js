@@ -11,8 +11,7 @@ export default {
     './src/symmetric-webcryptography.ts',
     './src/asymmetric-webcryptography.ts',
     './src/qrcode-generator.ts',
-    './src/qrcode-scanner.ts',
-    'node_modules/qr-scanner/qr-scanner-worker.min.js'
+    './src/urlhash-receiver.ts',
   ],
   output: {
     dir: 'build',

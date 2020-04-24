@@ -1,4 +1,3 @@
-import { bufferToHex } from './utils'
 import { setQRCodeData } from './qrcode-generator'
 
 function getMessageEncoding1() {
@@ -27,12 +26,13 @@ async function main() {
     keyPair.privateKey,
     encoded
   );
-  console.log(bufferToHex(signature))
+  console.log(signature)
 
-  let exportedPublicKey = await window.crypto.subtle.exportKey('jwk', keyPair.publicKey)
-  console.log(exportedPublicKey)
-  setQRCodeData("https://192.168.2.109/#"+JSON.stringify(exportedPublicKey))
-  //setQRCodeData('HI')
+  let test = await window.crypto.subtle.exportKey('spki', keyPair.publicKey)
+
+  let test1 = btoa(String.fromCharCode(...new Uint8Array(test)))
+
+ setQRCodeData("https://moritz.local/#"+test1)
 }
 
 main()
