@@ -10,12 +10,16 @@ async function main() {
     ["sign", "verify"]
   );
 
-  let test = await window.crypto.subtle.exportKey('spki', keyPair.publicKey)
+  let test = await window.crypto.subtle.exportKey('raw', keyPair.publicKey)
+
+  console.log("a")
+  console.log(new Uint8Array(test))
 
   let test1 = btoa(String.fromCharCode(...new Uint8Array(test)))
 
-  setQRCodeData("https://moritz.local/#"+test1)
+  setQRCodeData("https://192.168.2.109/#"+test1)
   
+  console.log(test1)
 }
 
 main()
