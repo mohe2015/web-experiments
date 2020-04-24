@@ -1,5 +1,18 @@
 # web-experiments
 
+opening the page creates a link to connect to you
+you also send that info to the bootstrap server
+
+
+if you open that link it asks the bootstrap server
+to connect you to that participant
+
+
+
+
+
+
+
 TODO
 discovery: bootstrap nodes, mdns, random walk on DHT
 
