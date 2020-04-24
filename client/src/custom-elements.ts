@@ -6,7 +6,7 @@
    constructor() {
      super()
 
-    var shadow = this.attachShadow({mode: 'open'})
+    var shadow = this.attachShadow({mode: 'closed'})
 
     var button = document.createElement('button')
     button.setAttribute('type', 'button')

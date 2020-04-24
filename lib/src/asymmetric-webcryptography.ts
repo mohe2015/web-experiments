@@ -1,5 +1,3 @@
-import { setQRCodeData } from './qrcode-generator'
-
 async function main() {
   let keyPair = await window.crypto.subtle.generateKey(
     {
@@ -16,8 +14,6 @@ async function main() {
   console.log(new Uint8Array(test))
 
   let test1 = btoa(String.fromCharCode(...new Uint8Array(test)))
-
-  setQRCodeData("https://192.168.2.109/#Moritz Hedtke#"+test1)
   
   console.log(test1)
 }

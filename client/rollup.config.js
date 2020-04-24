@@ -9,7 +9,7 @@ export default {
     './src/webrtc.ts',
     './src/index.ts',
     './src/symmetric-webcryptography.ts',
-    './src/asymmetric-webcryptography.ts',
+    '../lib/src/asymmetric-webcryptography.ts',
     './src/qrcode-generator.ts',
     './src/urlhash-receiver.ts',
   ],
