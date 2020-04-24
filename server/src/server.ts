@@ -1,6 +1,7 @@
 import { createServer, Server, IncomingMessage } from 'http'
 import WebSocket from 'ws'
 import Crypto from '@peculiar/webcrypto';
+import btoa from 'btoa'
 
 const crypto = new Crypto.Crypto();
 
@@ -15,7 +16,10 @@ async function jjjj() {
   );
 
   let test = await crypto.subtle.exportKey('raw', keyPair.publicKey)
-  console.log(test)
+
+
+  let test1 = btoa(String.fromCharCode(...new Uint8Array(test)))
+  console.log("https://192.168.2.109/#"+test1)
 }
 jjjj()
 
