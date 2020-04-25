@@ -1,9 +1,9 @@
 import { createServer, Server, IncomingMessage } from 'http'
 import WebSocket from 'ws'
-import Crypto from '@peculiar/webcrypto';
+import { Crypto } from '@peculiar/webcrypto';
 import btoa from 'btoa'
 
-const crypto = new Crypto.Crypto();
+const crypto = new Crypto();
 
 async function jjjj() {
   let keyPair = await crypto.subtle.generateKey(
