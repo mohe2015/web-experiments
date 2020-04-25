@@ -11,8 +11,7 @@ export default {
     './src/client/symmetric-webcryptography.ts',
     './src/client/qrcode-generator.ts',
     './src/client/urlhash-receiver.ts',
-    './src/lib/asymmetric-webcryptography.ts',
-    './src/server/server.ts'
+    './src/lib/asymmetric-webcryptography.ts'
   ],
   output: {
     dir: 'build',
