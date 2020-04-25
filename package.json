@@ -1,7 +1,6 @@
 {
   "scripts": {
-    "client:watch:ts": "rollup -c --watch",
-    "client:watch": "npm-run-all --parallel client:watch:ts",
+    "client:watch": "rollup -c --watch",
     "client:build": "rollup -c",
     "server:watch:transpile": "tsc --watch",
     "server:watch:run": "nodemon build/server.js",
