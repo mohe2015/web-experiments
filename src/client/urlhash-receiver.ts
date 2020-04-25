@@ -1,4 +1,4 @@
-import { importAsyncPublicKey } from '../../lib/src/asymmetric-webcryptography'
+import { importAsyncPublicKey } from '../lib/asymmetric-webcryptography'
 
 async function testttt() {
   if (window.location.hash) {

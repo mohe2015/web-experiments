@@ -4,14 +4,14 @@ import commonjs from '@rollup/plugin-commonjs';
 
 export default {
   input: [
-    './src/database.ts',
-    './src/custom-elements.ts',
-    './src/webrtc.ts',
-    './src/index.ts',
-    './src/symmetric-webcryptography.ts',
-    '../lib/src/asymmetric-webcryptography.ts',
-    './src/qrcode-generator.ts',
-    './src/urlhash-receiver.ts',
+    './src/client/database.ts',
+    './src/client/custom-elements.ts',
+    './src/client/webrtc.ts',
+    './src/client/index.ts',
+    './src/client/symmetric-webcryptography.ts',
+    './src/client/qrcode-generator.ts',
+    './src/client/urlhash-receiver.ts',
+    './src/lib/asymmetric-webcryptography.ts',
   ],
   output: {
     dir: 'build',

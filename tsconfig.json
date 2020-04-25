@@ -8,7 +8,6 @@
     "sourceMap": true,
     "allowSyntheticDefaultImports": true,
     "esModuleInterop": true,
-    "outDir": "./build"
   },
   "include": ["src"],
 }
