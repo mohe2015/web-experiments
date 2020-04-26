@@ -1789,10 +1789,21 @@ ts-node-dev@^1.0.0-pre.44:
     ts-node "*"
     tsconfig "^7.0.0"
 
-ts-node@*, ts-node@^8.9.0:
+ts-node@*:
   version "8.9.0"
   resolved "https://registry.yarnpkg.com/ts-node/-/ts-node-8.9.0.tgz#d7bf7272dcbecd3a2aa18bd0b96c7d2f270c15d4"
   integrity sha512-rwkXfOs9zmoHrV8xE++dmNd6ZIS+nmHHCxcV53ekGJrxFLMbp+pizpPS07ARvhwneCIECPppOwbZHvw9sQtU4w==
+  dependencies:
+    arg "^4.1.0"
+    diff "^4.0.1"
+    make-error "^1.1.1"
+    source-map-support "^0.5.17"
+    yn "3.1.1"
+
+ts-node@^8.9.1:
+  version "8.9.1"
+  resolved "https://registry.yarnpkg.com/ts-node/-/ts-node-8.9.1.tgz#2f857f46c47e91dcd28a14e052482eb14cfd65a5"
+  integrity sha512-yrq6ODsxEFTLz0R3BX2myf0WBCSQh9A+py8PBo1dCzWIOcvisbyH6akNKqDHMgXePF2kir5mm5JXJTH3OUJYOQ==
   dependencies:
     arg "^4.1.0"
     diff "^4.0.1"
@@ -1827,10 +1838,10 @@ typedarray-to-buffer@^3.1.5:
   dependencies:
     is-typedarray "^1.0.0"
 
-typescript@^3.9.0-dev.20200423:
-  version "3.9.0-dev.20200425"
-  resolved "https://registry.yarnpkg.com/typescript/-/typescript-3.9.0-dev.20200425.tgz#9b6bfc153b78929adb731737f2cce465b02d2fc2"
-  integrity sha512-YjP3XoXMSJvza4COs+jXEu1ctdG8+vnieJvv6xJB5iFJIRpzSIF0YBTLn0TOu4oDZe9LyTtjMQkV8k/eemBnpA==
+typescript@^3.9.0-dev.20200426:
+  version "3.9.0-dev.20200426"
+  resolved "https://registry.yarnpkg.com/typescript/-/typescript-3.9.0-dev.20200426.tgz#096b132fe7bb25432c3d2220c64289db18d80caf"
+  integrity sha512-0MRHJbVaaQ0W2pwC1v1Z5u2ucgvXC6nV6tIMZDgRCgwn1Rv+kB/lVMaXPw86Ug+bvrAr+IHprlRTPB56JqYRvA==
 
 undefsafe@^2.0.2:
   version "2.0.3"
@@ -1939,7 +1950,7 @@ write-file-atomic@^3.0.0:
     signal-exit "^3.0.2"
     typedarray-to-buffer "^3.1.5"
 
-ws@^7.2.0, ws@^7.2.3:
+ws@^7.2.0, ws@^7.2.5:
   version "7.2.5"
   resolved "https://registry.yarnpkg.com/ws/-/ws-7.2.5.tgz#abb1370d4626a5a9cd79d8de404aa18b3465d10d"
   integrity sha512-C34cIU4+DB2vMyAbmEKossWq2ZQDr6QEyuuCzWrM9zfw1sGc0mYiJ0UnG9zzNykt49C2Fi34hvr2vssFQRS6EA==
