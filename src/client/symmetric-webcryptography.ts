@@ -124,14 +124,6 @@ async function decrypt() {
   }
 }
 
-const encryptButton = document.querySelector(".pbkdf2 .encrypt-button") as HTMLElement;
-encryptButton.addEventListener("click", encrypt);
-
-const decryptButton = document.querySelector(".pbkdf2 .decrypt-button") as HTMLElement;
-decryptButton.addEventListener("click", decrypt);
-
-
-
 
 async function test() {
   let key = await window.crypto.subtle.generateKey(

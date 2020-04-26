@@ -24,20 +24,12 @@ export default {
   plugins: [
     typescript(),
     commonjs(),
-    nodePolyfills(),
     resolve({
       preferBuiltins: false,
       browser: true, 
       jsnext: true, 
       extensions: [".ts", ".js"]
     }),
-    replace({
-      patterns: [
-        {
-          test: / 'perf_hooks';/g,
-          replace: " ''"
-        }
-      ]
-    }),
+    nodePolyfills(),
   ],
 };
