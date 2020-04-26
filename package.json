@@ -15,7 +15,6 @@
     "popper.js": "^1.16.1-lts",
     "qrcode": "https://github.com/LinusU/node-qrcode#uint8array",
     "ws": "^7.2.3",
-    "y-indexeddb": "^9.0.3",
     "y-webrtc": "^10.1.5",
     "yjs": "^13.0.5"
   },
