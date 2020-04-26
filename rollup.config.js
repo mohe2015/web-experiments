@@ -16,7 +16,7 @@ export default {
   ],
   output: {
     dir: 'build',
-    format: 'es',
+    format: 'esm',
     sourcemap: true
   },
   plugins: [
