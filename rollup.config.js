@@ -10,6 +10,9 @@ export default {
     sourcemap: true
   },
   plugins: [
+    typescript({
+      
+    }),
     commonjs(),
     resolve({
       mainFields: ['browser', 'module', 'main'],
