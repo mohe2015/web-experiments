@@ -3,13 +3,23 @@
 // node node_modules/y-webrtc/bin/server.js
 import * as Y from 'yjs'
 import { WebrtcProvider } from 'y-webrtc'
+import { IndexeddbPersistence, fetchUpdates } from 'y-indexeddb'
 
-const ydoc = new Y.Doc()
-new WebrtcProvider('your-room-name', ydoc)
-const yarray = ydoc.getArray('array')
-// TODO update first
+async function abcde() {
+  
 
-console.log(yarray)
-yarray.push(["a", "b", "c"])
+  const ydoc = new Y.Doc()
 
-yarray.forEach(e => console.log(e))
+  let idbP = new IndexeddbPersistence('your-room-name', ydoc)
+  await fetchUpdates(idbP)
+  new WebrtcProvider('your-room-name', ydoc)
+  
+  const yarray = ydoc.getArray('array')
+  // TODO update first
+
+  console.log(yarray)
+  yarray.push(["a", "b", "c"])
+
+  yarray.forEach(e => console.log(e))
+}
+abcde()
