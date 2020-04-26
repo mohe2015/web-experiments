@@ -36,6 +36,8 @@
     "ts-node": "^8.9.1",
     "ts-node-dev": "^1.0.0-pre.44",
     "tslib": "^1.11.1",
-    "typescript": "^3.9.0-dev.20200426"
+    "typescript": "^3.9.0-dev.20200426",
+    "webpack": "^4.43.0",
+    "webpack-cli": "^3.3.11"
   }
 }
