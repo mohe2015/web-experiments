@@ -1,6 +1,8 @@
 import typescript from '@rollup/plugin-typescript';
 import resolve from "@rollup/plugin-node-resolve";
 import commonjs from '@rollup/plugin-commonjs';
+import nodePolyfills from 'rollup-plugin-node-polyfills';
+import replace from 'rollup-plugin-re'
 
 export default {
   input: [
@@ -22,11 +24,20 @@ export default {
   plugins: [
     typescript(),
     commonjs(),
+    nodePolyfills(),
     resolve({
       preferBuiltins: false,
       browser: true, 
       jsnext: true, 
       extensions: [".ts", ".js"]
+    }),
+    replace({
+      patterns: [
+        {
+          test: / 'perf_hooks';/g,
+          replace: " ''"
+        }
+      ]
     }),
   ],
 };
