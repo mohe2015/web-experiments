@@ -13,13 +13,13 @@ async function abcde() {
   await idbP.whenSynced
 
   new WebrtcProvider('your-room-name', ydoc)
-  
-  const yarray = ydoc.getArray('array')
-  // TODO update first
 
-  console.log(yarray)
-  yarray.push(["a", "b", "c"])
+  const yarray = ydoc.getArray<number>('count')
 
-  yarray.forEach(e => console.log(e))
+  yarray.push([1])
+
+  let sum = yarray.toArray().reduce((a,b)=>(a+b))
+
+  console.log(sum)
 }
 abcde()
