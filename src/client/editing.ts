@@ -5,6 +5,23 @@ import * as Y from 'yjs'
 import { WebrtcProvider } from 'y-webrtc'
 import { IndexeddbPersistence } from 'y-indexeddb'
 
+let countElement = document.getElementById('count') as HTMLHeadingElement
+
+countElement.addEventListener('animationend', () => {
+  if (countElement.classList.contains('fadeout-text')) {
+    countElement.classList.remove('fadeout-text')
+    countElement.innerText = countElement.dataset.newText as string;
+    countElement.classList.add('fadein-text')
+  } else if (countElement.classList.contains('fadein-text')) {
+    countElement.classList.remove('fadein-text')
+  }
+});
+
+function updateText(text: string) {
+  countElement.dataset.newText = text;
+  countElement.classList.add('fadeout-text')
+}
+
 async function abcde() {
   const ydoc = new Y.Doc()
   // this allows you to instantly get the (cached) documents data
@@ -21,10 +38,13 @@ async function abcde() {
   // observe changes of the sum
   yarray.observe(event => {
     // this will print updates from the network
-    console.log("new sum: " + yarray.toArray().reduce((a,b)=>(a+b)))
+    let sum = yarray.toArray().reduce((a,b)=>(a+b))
+    console.log("new sum: " + sum)
+    updateText(sum.toString())
   })
   // print initial number (the cached one plus one)
   let sum = yarray.toArray().reduce((a,b)=>(a+b))
   console.log(sum)
+  countElement.innerText = sum.toString();
 }
 abcde()
