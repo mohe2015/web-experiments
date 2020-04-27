@@ -3,16 +3,15 @@
 // node node_modules/y-webrtc/bin/server.js
 import * as Y from 'yjs'
 import { WebrtcProvider } from 'y-webrtc'
-import { IndexeddbPersistence, fetchUpdates } from 'y-indexeddb'
+import { IndexeddbPersistence } from 'y-indexeddb'
 
 async function abcde() {
-  
-
   const ydoc: Y.Doc = new Y.Doc()
 
   let idbP = new IndexeddbPersistence('your-room-name', ydoc)
-  console.log(idbP)
-  await fetchUpdates(idbP)
+
+  await idbP.whenSynced
+
   new WebrtcProvider('your-room-name', ydoc)
   
   const yarray = ydoc.getArray('array')
