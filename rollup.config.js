@@ -15,6 +15,6 @@ export default {
       mainFields: ['browser', 'module', 'main'],
       extensions: [".mjs", ".js", ".ts"]
     }),
-    typescript(),
+    typescript()
   ],
 };
