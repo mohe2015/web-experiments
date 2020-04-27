@@ -11,6 +11,7 @@ async function abcde() {
   const ydoc: Y.Doc = new Y.Doc()
 
   let idbP = new IndexeddbPersistence('your-room-name', ydoc)
+  console.log(idbP)
   await fetchUpdates(idbP)
   new WebrtcProvider('your-room-name', ydoc)
   
