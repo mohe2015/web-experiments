@@ -46,5 +46,50 @@ async function abcde() {
   let sum = yarray.toArray().reduce((a,b)=>(a+b))
   console.log(sum)
   countElement.innerText = sum.toString();
+
+  const yPosts = ydoc.getArray('posts')
+  yPosts.observe(event => {
+    let table = document.getElementById('posts') as HTMLTableElement
+    let node = table.querySelector('tbody') as HTMLTableSectionElement
+    var tbody = node.cloneNode(false);
+    (node.parentNode as HTMLElement).replaceChild(tbody, node);
+
+    yPosts.forEach((originalElement) => {
+      let element = originalElement as Y.Map<string>
+      let tr = document.createElement('tr')
+
+      let tdTitle = document.createElement('td')
+      tdTitle.appendChild(document.createTextNode(element.get('title') as string))
+
+      let tdAuthors = document.createElement('td')
+      tdAuthors.appendChild(document.createTextNode(element.get('author') as string))
+
+      let tdContent = document.createElement('td')
+      tdContent.appendChild(document.createTextNode(element.get('content') as string))
+
+      let tdCreatedAt = document.createElement('td')
+      tdCreatedAt.appendChild(document.createTextNode(element.get('createdAt') as string))
+
+      let tdUpdatedAt = document.createElement('td')
+      tdUpdatedAt.appendChild(document.createTextNode(element.get('updatedAt') as string))
+
+      tr.appendChild(tdTitle)
+      tr.appendChild(tdAuthors)
+      tr.appendChild(tdContent)
+      tr.appendChild(tdCreatedAt)
+      tr.appendChild(tdUpdatedAt)
+
+      tbody.appendChild(tr)
+    })
+  })
+
+  const yPost = new Y.Map()
+  yPost.set("title", "Teeest")
+  yPost.set("author", "mohe2015")
+  yPost.set("content", "hi")
+  yPost.set("createdAt", "10.12.2001")
+  yPost.set("updatedAt", "27.04.2020")
+
+  yPosts.push([yPost])
 }
 abcde()

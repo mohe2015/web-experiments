@@ -14,11 +14,24 @@
   </head>
   <body>
 
-
     <h1 id="count" class="display-1 text-center fadein-text">1</h1>
-    
-    <my-button id="offer" secondary>Offer</my-button>
-    <my-button id="answer" secondary>Answer</my-button>
+  
+    <h1 class="text-center">Blogposts</h1>
+
+    <table id="posts" class="table">
+      <thead>
+        <tr>
+          <th scope="col">Title</th>
+          <th scope="col">Authors</th>
+          <th scope="col">Content</th>
+          <th scope="col">CreatedAt</th>
+          <th scope="col">UpdatedAt</th>
+          <!-- REVISIONS... -->
+        </tr>
+      </thead>
+      <tbody>
+      </tbody>
+    </table>
 
     <script type="module" src="/build/editing.js"></script>
     <script type="module" src="/build/custom-elements.js"></script>
