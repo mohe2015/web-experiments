@@ -8,7 +8,7 @@ import { IndexeddbPersistence, fetchUpdates } from 'y-indexeddb'
 async function abcde() {
   
 
-  const ydoc = new Y.Doc()
+  const ydoc: Y.Doc = new Y.Doc()
 
   let idbP = new IndexeddbPersistence('your-room-name', ydoc)
   await fetchUpdates(idbP)

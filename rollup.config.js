@@ -3,7 +3,7 @@ import resolve from "@rollup/plugin-node-resolve";
 import commonjs from '@rollup/plugin-commonjs';
 
 export default {
-  input: './src/client/editing.js',
+  input: './src/client/editing.ts',
   output: {
     dir: 'build',
     format: 'esm',
