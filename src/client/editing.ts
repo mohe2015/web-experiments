@@ -7,12 +7,13 @@ import { IndexeddbPersistence } from 'y-indexeddb'
 
 let countElement = document.getElementById('count') as HTMLSpanElement
 
-countElement.addEventListener('animationend', () => {
-  if (countElement.classList.contains('fadeout-text')) {
+countElement.addEventListener('animationend', (event: AnimationEvent) => {
+  console.log(event.animationName)
+  if (event.animationName === "fadeOut") {
     countElement.classList.remove('fadeout-text')
     countElement.innerText = countElement.dataset.newText as string;
     countElement.classList.add('fadein-text')
-  } else if (countElement.classList.contains('fadein-text')) {
+  } else if (event.animationName === "fadeIn") {
     countElement.classList.remove('fadein-text')
   }
 });
