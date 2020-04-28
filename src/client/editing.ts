@@ -4,6 +4,7 @@
 import * as Y from 'yjs'
 import { WebrtcProvider } from 'y-webrtc'
 import { IndexeddbPersistence } from 'y-indexeddb'
+import { YTextEvent } from 'yjs/dist/src/internals';
 
 let countElement = document.getElementById('count') as HTMLSpanElement
 
@@ -98,5 +99,14 @@ async function abcde() {
   yPost.set("updatedAt", "27.04.2020")
 
   yPosts.push([yPost])
+
+
+  const yText = ydoc.getText('text')
+
+  yText.insert(0, 'bold text', { bold: true })
+
+  yText.observe((event: YTextEvent, transaction: Y.Transaction) => {
+    console.log(event.changes)
+  })
 }
 abcde()
