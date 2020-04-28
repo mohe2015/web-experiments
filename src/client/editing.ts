@@ -5,7 +5,7 @@ import * as Y from 'yjs'
 import { WebrtcProvider } from 'y-webrtc'
 import { IndexeddbPersistence } from 'y-indexeddb'
 
-let countElement = document.getElementById('count') as HTMLHeadingElement
+let countElement = document.getElementById('count') as HTMLSpanElement
 
 countElement.addEventListener('animationend', () => {
   if (countElement.classList.contains('fadeout-text')) {
@@ -45,7 +45,13 @@ async function abcde() {
   // print initial number (the cached one plus one)
   let sum = yarray.toArray().reduce((a,b)=>(a+b))
   console.log(sum)
-  countElement.innerText = sum.toString();
+  countElement.innerText = sum.toString()
+  countElement.classList.add('fadein-text');
+  countElement.classList.remove('invisible');
+
+  (document.getElementById('add-count') as HTMLButtonElement).addEventListener('click', e => {
+    yarray.push([1])
+  })
 
   const yPosts = ydoc.getArray('posts')
   yPosts.observe(event => {

@@ -17,13 +17,13 @@
 }
 
 .fadeout-text {
-  animation-duration: 0.5s;
+  animation-duration: 0.25s;
   animation-name: fadeOut;
   animation-fill-mode: forwards;
 }
 
 .fadein-text {
-  animation-duration: 2s;
+  animation-duration: 0.25s;
   animation-name: fadeIn;
   animation-fill-mode: forwards;
 }
