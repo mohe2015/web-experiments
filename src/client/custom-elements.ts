@@ -1,15 +1,12 @@
 // https://developer.mozilla.org/en-US/docs/Web/Web_Components/Using_custom_elements
 // https://developers.google.com/web/fundamentals/web-components/best-practices
 
- export class Button extends HTMLElement {
+ export class Button extends HTMLButtonElement {
 
    constructor() {
      super()
 
-      var shadow = this.attachShadow({mode: 'open'})
-
-      var button = document.createElement('button')
-      button.setAttribute('type', 'button')
+      this.setAttribute('type', 'button')
 
       var buttonStyle = 'primary' // default
       buttonStyle = this.hasAttribute('primary') ? 'primary' : buttonStyle;
@@ -22,15 +19,7 @@
       buttonStyle = this.hasAttribute('dark') ? 'dark' : buttonStyle;
       buttonStyle = this.hasAttribute('link') ? 'link' : buttonStyle;
 
-      button.setAttribute('class', `btn btn-${buttonStyle}`)
-      button.textContent = this.textContent;
-
-      const linkElem = document.createElement('link');
-      linkElem.setAttribute('rel', 'stylesheet');
-      linkElem.setAttribute('href', '/node_modules/bootstrap/dist/css/bootstrap.css');
-
-      shadow.appendChild(button);
-      shadow.appendChild(linkElem);
+      this.setAttribute('class', `btn btn-${buttonStyle}`)
   }
 }
 
@@ -47,6 +36,11 @@ export class Editor extends HTMLElement {
      let addButton = new Button()
      addButton.textContent = "+"
      shadow.appendChild(addButton)
+
+     const linkElem = document.createElement('link');
+     linkElem.setAttribute('rel', 'stylesheet');
+     linkElem.setAttribute('href', '/node_modules/bootstrap/dist/css/bootstrap.css');
+     shadow.appendChild(linkElem)
   }
 }
 
@@ -60,6 +54,6 @@ export class EditorParagraph extends HTMLParagraphElement {
   }
 }
 
-customElements.define('my-button', Button)
+customElements.define('my-button', Button, { extends: 'button' })
 customElements.define('my-editor', Editor)
 customElements.define('my-p', EditorParagraph, { extends: 'p' })
