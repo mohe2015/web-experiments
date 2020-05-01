@@ -1,7 +1,8 @@
 // https://developer.mozilla.org/en-US/docs/Web/Web_Components/Using_custom_elements
 // https://developers.google.com/web/fundamentals/web-components/best-practices
+import bootstrap from 'bootstrap'
 
- export class Button extends HTMLButtonElement {
+export class Button extends HTMLButtonElement {
 
    constructor() {
      super()
@@ -28,19 +29,24 @@ export class Editor extends HTMLElement {
   constructor() {
     super()
 
-     var shadow = this.attachShadow({mode: 'open'})
+    var shadow = this.attachShadow({mode: 'open'})
 
-     let slot = document.createElement('slot')
-     shadow.appendChild(slot)
+    let slot = document.createElement('slot')
+    shadow.appendChild(slot)
 
-     let addButton = new Button()
-     addButton.textContent = "+"
-     shadow.appendChild(addButton)
+    var templateElement = document.getElementById('editor-add-button-template') as HTMLTemplateElement
+    let template = templateElement.content.cloneNode(true)
 
-     const linkElem = document.createElement('link');
-     linkElem.setAttribute('rel', 'stylesheet');
-     linkElem.setAttribute('href', '/node_modules/bootstrap/dist/css/bootstrap.css');
-     shadow.appendChild(linkElem)
+    new bootstrap.Popover(document.querySelector('.popover-dismiss'), {
+       trigger: 'focus'
+    })
+    
+    shadow.appendChild(template)
+
+    const linkElem = document.createElement('link');
+    linkElem.setAttribute('rel', 'stylesheet');
+    linkElem.setAttribute('href', '/node_modules/bootstrap/dist/css/bootstrap.css');
+    shadow.appendChild(linkElem)
   }
 }
 
