@@ -55,7 +55,7 @@ async function abcde() {
     yarray.push([1])
   })
 
-  const yPosts = ydoc.getArray('posts')
+  const yPosts = ydoc.getArray('posts1')
   yPosts.observe(event => {
     let table = document.getElementById('posts') as HTMLTableElement
     let node = table.querySelector('tbody') as HTMLTableSectionElement
@@ -98,7 +98,7 @@ async function abcde() {
   yPost.set("createdAt", "10.12.2001")
   yPost.set("updatedAt", "27.04.2020")
 
-  yPosts.push([yPost])
+  //yPosts.push([yPost])
 
 
   const yText = ydoc.getText('text')
