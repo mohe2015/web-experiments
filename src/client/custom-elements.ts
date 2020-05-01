@@ -1,6 +1,6 @@
 // https://developer.mozilla.org/en-US/docs/Web/Web_Components/Using_custom_elements
 // https://developers.google.com/web/fundamentals/web-components/best-practices
-import bootstrap from 'bootstrap'
+import { Popover } from 'bootstrap'
 
 export class Button extends HTMLButtonElement {
 
@@ -37,7 +37,7 @@ export class Editor extends HTMLElement {
     var templateElement = document.getElementById('editor-add-button-template') as HTMLTemplateElement
     let template = templateElement.content.cloneNode(true)
 
-    new bootstrap.Popover(document.querySelector('.popover-dismiss'), {
+    new Popover(document.querySelector('.popover-dismiss'), {
        trigger: 'focus'
     })
     
