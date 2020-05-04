@@ -1,6 +1,5 @@
 // https://developer.mozilla.org/en-US/docs/Web/Web_Components/Using_custom_elements
 // https://developers.google.com/web/fundamentals/web-components/best-practices
-import { Popover } from 'bootstrap'
 
 export class Button extends HTMLButtonElement {
 
@@ -36,17 +35,24 @@ export class Editor extends HTMLElement {
 
     var templateElement = document.getElementById('editor-add-button-template') as HTMLTemplateElement
     let template = templateElement.content.cloneNode(true)
-
-    new Popover(document.querySelector('.popover-dismiss'), {
-       trigger: 'focus'
-    })
-    
     shadow.appendChild(template)
 
-    const linkElem = document.createElement('link');
-    linkElem.setAttribute('rel', 'stylesheet');
-    linkElem.setAttribute('href', '/node_modules/bootstrap/dist/css/bootstrap.css');
+    const linkElem = document.createElement('link')
+    linkElem.setAttribute('rel', 'stylesheet')
+    linkElem.setAttribute('href', '/node_modules/bootstrap/dist/css/bootstrap.css')
     shadow.appendChild(linkElem)
+
+    const linkElem1 = document.createElement('link')
+    linkElem1.setAttribute('rel', 'stylesheet')
+    linkElem1.setAttribute('href', '/fontawesome/css/all.css')
+    shadow.appendChild(linkElem1)
+
+    var dropdownElementList = [].slice.call(shadow.querySelectorAll('.dropdown-toggle'))
+    dropdownElementList.map(function (dropdownToggleEl) {
+      console.log(dropdownToggleEl)
+      // @ts-ignore
+      return new bootstrap.Dropdown(dropdownToggleEl)
+    })
   }
 }
 

@@ -10,6 +10,8 @@
 
     <link rel="stylesheet" href="/index.css">
 
+    <link href="/fontawesome/css/all.css" rel="stylesheet">
+
     <title>Hello, world!</title>
   </head>
   <body>
@@ -40,13 +42,20 @@
     </table>
 
     <template id="editor-add-button-template">
-      <a tabindex="0" class="btn btn-lg btn-danger" role="button" data-toggle="popover" data-trigger="focus" title="Dismissible popover" data-content="And here's some amazing content. It's very engaging. Right?">
-        Dismissible popover
-      </a>
+      <div class="d-flex justify-content-center">
+        <div class="dropdown">
+          <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButtona" data-toggle="dropdown" aria-expanded="false">
+            +
+          </button>
+          <ul class="dropdown-menu" aria-labelledby="dropdownMenuButtona">
+            <li><a class="dropdown-item" href="#"><span class="fas fa-paragraph"></span></a></li>
+          </ul>
+        </div>
+      </div>
     </template>
 
+    <script src="/node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
     <script type="module" src="/build/editing.js"></script>
     <script type="module" src="/build/custom-elements.js"></script>
-    <script src="/node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
   </body>
 </html>
