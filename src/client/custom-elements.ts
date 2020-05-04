@@ -47,6 +47,7 @@ export class Editor extends HTMLElement {
     linkElem1.setAttribute('href', '/fontawesome/css/all.css')
     shadow.appendChild(linkElem1)
 
+    // TODO BUGREPORT to twbs/bootstrap dropdowns don't work in custom elements / shadow dom
     var dropdownElementList = [].slice.call(shadow.querySelectorAll('.dropdown-toggle'))
     console.log(dropdownElementList)
     dropdownElementList.map(function (dropdownToggleEl) {
