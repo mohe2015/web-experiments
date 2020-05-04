@@ -48,6 +48,7 @@ export class Editor extends HTMLElement {
     shadow.appendChild(linkElem1)
 
     var dropdownElementList = [].slice.call(shadow.querySelectorAll('.dropdown-toggle'))
+    console.log(dropdownElementList)
     dropdownElementList.map(function (dropdownToggleEl) {
       console.log(dropdownToggleEl)
       // @ts-ignore
